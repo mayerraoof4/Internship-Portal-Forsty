@@ -1,8 +1,8 @@
 import { Router } from "express";
-import JobsController from "../controllers/jobs.controller";
+import InternshipsController from "../controllers/jobs.controller";
 import { asyncWrapper } from "../helpers/async-wrapper";
 
-export default class JobsRoutes {
+export default class InternshipsRoutes {
   public router: Router;
 
   constructor() {
@@ -11,10 +11,10 @@ export default class JobsRoutes {
   }
 
   private routes() {
-    this.router.get("/", asyncWrapper(JobsController.getJobs));
-    this.router.post("/", asyncWrapper(JobsController.createJob));
-    this.router.get("/:id", asyncWrapper(JobsController.getJob));
-    this.router.put("/:id", asyncWrapper(JobsController.updateJob));
-    this.router.delete("/:id", asyncWrapper(JobsController.deleteJob));
+    this.router.get("/", asyncWrapper(InternshipsController.getInternships));
+    this.router.post("/", asyncWrapper(InternshipsController.createInternship));
+    this.router.get("/:id", asyncWrapper(InternshipsController.getInternship));
+    this.router.put("/:id", asyncWrapper(InternshipsController.updateInternship));
+    this.router.delete("/:id", asyncWrapper(InternshipsController.deleteInternship));
   }
 }

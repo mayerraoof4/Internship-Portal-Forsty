@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import * as Yup from "yup";
 
 const FORM_INITIAL_VALUES = {
-  user_type_name: "job_seeker",
+  user_type_name: "internship_seeker",
   email: "",
   password: "",
   confirmPassword: "",
@@ -32,7 +32,7 @@ const useRegisterForm = () => {
   const validationSchema = Yup.object({
     user_type_name: Yup.string()
       .required("User type is required")
-      .oneOf(["job_seeker", "hr_recruiter"]),
+      .oneOf(["internship_seeker", "company"]),
     email: Yup.string()
       .required("Email is required")
       .email("Invalid email address"),

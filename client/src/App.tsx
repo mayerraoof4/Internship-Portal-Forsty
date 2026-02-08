@@ -9,10 +9,12 @@ const RegisterPage = lazy(() => import("@/pages/AuthPages/RegisterPage"));
 const ForgotPasswordPage = lazy(
   () => import("@/pages/AuthPages/ForgotPasswordPage")
 );
-const MyJobsPage = lazy(() => import("@/pages/MyJobsPage"));
-const SavedJobsPage = lazy(() => import("@/pages/SavedJobsPage"));
+const MyInternshipsPage = lazy(() => import("@/pages/MyJobsPage"));
+const SavedInternshipsPage = lazy(() => import("@/pages/SavedJobsPage"));
 const MessagesPage = lazy(() => import("@/pages/MessagesPage"));
 const ProfilePage = lazy(() => import("@/pages/ProfilePage"));
+const SettingsPage = lazy(() => import("@/pages/SettingsPage"));
+const PostInternshipPage = lazy(() => import("@/pages/PostInternshipPage"));
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -22,10 +24,12 @@ function App() {
         <Routes>
           <Route path="/" element={<AppWrapper />}>
             <Route index element={<HomePage />} />
-            <Route path="/my-jobs" element={<MyJobsPage />} />
-            <Route path="/saved-jobs" element={<SavedJobsPage />} />
+            <Route path="/my-internships" element={<MyInternshipsPage />} />
+            <Route path="/saved-internships" element={<SavedInternshipsPage />} />
             <Route path="/messages" element={<MessagesPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/post-internship" element={<PostInternshipPage />} />
             <Route path="/login" element={<Navigate to="/" />} />
             <Route path="/register" element={<Navigate to="/" />} />
             <Route path="/forgot-password" element={<Navigate to="/" />} />

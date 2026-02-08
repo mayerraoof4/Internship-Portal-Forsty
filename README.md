@@ -1,8 +1,8 @@
 <div align="center">
-  <h1 align="center">Job Portal</h1>
+  <h1 align="center">Forsty</h1>
 </div>
 <h4>
-    Job Portal is an free and open source platform, designed to help job seekers find suitable employment opportunities and employers post job listings efficiently.
+    Forsty is an free and open source platform, designed to help internship seekers find suitable internship opportunities and companies post internship listings efficiently.
     build with React, Node, Express, MongoDB and TailwindCSS.
 </h4>
 
@@ -12,13 +12,13 @@
 
 ## Features
 
-- People can register as job seekers, build their profiles, and look for jobs matching their skill sets.
+- People can register as internship seekers, build their profiles, and look for internships matching their skill sets.
 - Users can upload their existing resumes. If they do not have one, they should be able to fill out a form and have a resume built for them.
-- People can apply directly to posted jobs.
-- Companies can register, post jobs, and search job seeker profiles.
-- Multiple representatives from a company should be able to register and post jobs.
-- Company representatives can view a list of job applicants and can contact them, initiative an interview, or perform some other action related to their post.
-- Registered users should be able to search for jobs and filter the results based on location, required skills, salary, experience level, etc
+- People can apply directly to posted internships.
+- Companies can register, post internships, and search internship seeker profiles.
+- Multiple representatives from a company should be able to register and post internships.
+- Company representatives can view a list of internship applicants and can contact them, initiative an interview, or perform some other action related to their post.
+- Registered users should be able to search for internships and filter the results based on location, required skills, salary, experience level, etc
 
 ## Screenshots
 
@@ -55,7 +55,7 @@
 
 ### Prerequisites
 
-Here's what you need to be able to run Job Portal:
+Here's what you need to be able to run Forsty:
 
 - Node.js (version>=18.18.0)
 - Docker
@@ -120,7 +120,7 @@ Visit [http://localhost:5137](http://localhost:5137) in your browser.
 
 ## Contributing
 
-Job Portal is an open-source project and we welcome contributions from the community.
+Forsty is an open-source project and we welcome contributions from the community.
 
 If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
 

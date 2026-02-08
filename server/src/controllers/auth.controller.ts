@@ -22,7 +22,9 @@ export default class AuthController {
   public static async login(req: Request, res: Response, next: NextFunction) {
     try {
       const { email, password } = req.body;
-      const user = await UserAccount.findOne({ email: email });
+      const user = await UserAccount.findOne({ email: email }).populate(
+        "user_type_id"
+      );
 
       // If user account is not found, throw an error
       if (!user) {
@@ -63,7 +65,7 @@ export default class AuthController {
       const payload = req.body;
       const { user_type_name } = payload;
 
-      // Find the user type where name [job_seeker, hr_recruiter]
+      // Find the user type where name [internship_seeker, company]
       const userType = await UserType.findOne({
         user_type_name: user_type_name,
       });
@@ -96,6 +98,9 @@ export default class AuthController {
       // Save the user account
       await userAccount.save();
 
+      // Populate user_type for response
+      await userAccount.populate("user_type_id");
+
       // Send a response with the user account details
       res.status(StatusCodes.CREATED).json({
         message: "User account created successfully",
@@ -114,8 +119,10 @@ export default class AuthController {
    */
   public static async me(req: Request, res: Response, next: NextFunction) {
     try {
-      // Get the user account from the request object
-      const user = req.user;
+      // Get the user account from the request object and populate user type
+      const user = await UserAccount.findById((req.user as any)._id).populate(
+        "user_type_id"
+      );
 
       // Send a response with the user account details
       res.status(StatusCodes.OK).json({

@@ -1,1 +1,1 @@
-export { default } from "./SavedJobsPage";
+export { default } from "./SavedInternshipsPage";

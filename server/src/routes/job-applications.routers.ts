@@ -1,8 +1,8 @@
 import { Router } from "express";
-import JobApplicationsController from "../controllers/job-applications.controller";
+import InternshipApplicationsController from "../controllers/job-applications.controller";
 import { asyncWrapper } from "../helpers/async-wrapper";
 
-export default class JobApplicationsRoutes {
+export default class InternshipApplicationsRoutes {
   public router: Router;
 
   constructor() {
@@ -11,21 +11,21 @@ export default class JobApplicationsRoutes {
   }
 
   private routes() {
-    this.router.post(
-      "/:id/apply",
-      asyncWrapper(JobApplicationsController.applyForJob)
-    );
-    this.router.get(
-      "/:id/applications",
-      asyncWrapper(JobApplicationsController.getJobApplications)
-    );
     this.router.get(
       "/applications",
-      asyncWrapper(JobApplicationsController.getUserApplications)
+      asyncWrapper(InternshipApplicationsController.getUserApplications)
+    );
+    this.router.post(
+      "/:internshipId/apply",
+      asyncWrapper(InternshipApplicationsController.applyForInternship)
+    );
+    this.router.get(
+      "/:internshipId/applications",
+      asyncWrapper(InternshipApplicationsController.getInternshipApplications)
     );
     this.router.put(
-      "/applications/:id",
-      asyncWrapper(JobApplicationsController.updateJobApplication)
+      "/applications/:applicationId",
+      asyncWrapper(InternshipApplicationsController.updateInternshipApplication)
     );
   }
 }

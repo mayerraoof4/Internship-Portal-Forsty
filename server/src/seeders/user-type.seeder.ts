@@ -4,12 +4,12 @@ export default class UserTypeSeeder {
   public static async run() {
     const data = [
       {
-        user_type_name: "job_seeker",
-        user_type_display_name: "Job Seeker",
+        user_type_name: "internship_seeker",
+        user_type_display_name: "Internship Seeker",
       },
       {
-        user_type_name: "hr_recruiter",
-        user_type_display_name: "HR Recruiter",
+        user_type_name: "company",
+        user_type_display_name: "Company",
       },
     ];
 

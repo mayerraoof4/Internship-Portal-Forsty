@@ -1,7 +1,7 @@
 {
   "name": "job-portal",
   "version": "1.0.0",
-  "description": "<div align=\"center\">   <h1 align=\"center\">Job Portal</h1>   <h3>     A free and open source job hunting and recruiting solution build with React, Node, Express, MongoDB and TailwindCSS   </h3> </div>",
+  "description": "<div align=\"center\">   <h1 align=\"center\">Forsty</h1>   <h3>     A free and open source internship hunting and recruiting solution build with React, Node, Express, MongoDB and TailwindCSS   </h3> </div>",
   "main": "index.js",
   "scripts": {
     "install:all": "npm run install:server && npm run install:client",
@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "concurrently": "^8.2.2"
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

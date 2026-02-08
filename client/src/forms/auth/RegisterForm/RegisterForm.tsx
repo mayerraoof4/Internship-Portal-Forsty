@@ -45,8 +45,8 @@ const RegisterForm = () => {
               form.setFieldValue("user_type_name", e.target.value)
             }
           >
-            <option value="job_seeker">Job Seeker</option>
-            <option value="hr_recruiter">HR Recruiter</option>
+            <option value="internship_seeker">Internship Seeker</option>
+            <option value="company">Company</option>
           </select>
           {form.errors.user_type_name && (
             <FieldError error={form.errors.user_type_name} />

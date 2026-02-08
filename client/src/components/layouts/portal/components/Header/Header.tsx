@@ -24,8 +24,8 @@ const Header = () => {
     if (isAuthenticated) {
       return [
         { name: "Home", href: "/", icon: HomeIcon },
-        { name: "My Jobs", href: "/my-jobs", icon: BriefcaseIcon },
-        { name: "Saved Jobs", href: "/saved-jobs", icon: BookmarkIcon },
+        { name: "My Internships", href: "/my-internships", icon: BriefcaseIcon },
+        { name: "Saved Internships", href: "/saved-internships", icon: BookmarkIcon },
         { name: "Messages", href: "/messages", icon: ChatBubbleLeftRightIcon },
       ];
     }
@@ -70,13 +70,14 @@ const Header = () => {
         </div>
         {isAuthenticated ? (
           <div className="hidden lg:flex lg:flex-1 lg:justify-end flex items-center gap-x-8">
-            <button
-              type="button"
-              className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-300"
+            <Link
+              to="/messages"
+              className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-600 transition-colors"
+              title="View notifications"
             >
               <span className="sr-only">View notifications</span>
               <BellIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
+            </Link>
 
             <Menu as="div" className="relative inline-block text-left">
               <div>
@@ -101,7 +102,8 @@ const Header = () => {
                   <div className="px-1 py-1 ">
                     <Menu.Item>
                       {({ active }) => (
-                        <button
+                        <Link
+                          to="/profile"
                           className={`${
                             active
                               ? "bg-indigo-500 text-white"
@@ -114,12 +116,13 @@ const Header = () => {
                             <UserIcon className="h-5 w-5 mr-2 text-gray-400" />
                           )}
                           Your Profile
-                        </button>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <button
+                        <Link
+                          to="/settings"
                           className={`${
                             active
                               ? "bg-indigo-500 text-white"
@@ -132,7 +135,7 @@ const Header = () => {
                             <Cog8ToothIcon className="h-5 w-5 mr-2 text-gray-400" />
                           )}
                           Settings
-                        </button>
+                        </Link>
                       )}
                     </Menu.Item>
                   </div>
@@ -160,12 +163,12 @@ const Header = () => {
                 </Menu.Items>
               </Transition>
             </Menu>
-            <a
-              href="#"
+            <Link
+              to="/post-internship"
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Post a Job
-            </a>
+            </Link>
           </div>
         ) : (
           <div className="hidden lg:flex lg:flex-1 lg:justify-end flex items-center gap-x-8">
@@ -194,7 +197,7 @@ const Header = () => {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <div className="-m-1.5 p-1.5">
-              <span className="sr-only">JobPortal</span>
+              <span className="sr-only">Forsty</span>
               <Logo />
             </div>
             <button
@@ -248,18 +251,21 @@ const Header = () => {
                       Profile
                     </Link>
                     <Link
-                      to="/register"
+                      to="/settings"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       Settings
                     </Link>
-                    <Link
-                      to="/"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={logout}
+                    <button
+                      type="button"
+                      className="-mx-3 block w-full text-left rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      onClick={() => {
+                        logout();
+                        setMobileMenuOpen(false);
+                      }}
                     >
                       Sign out
-                    </Link>
+                    </button>
                   </>
                 )}
               </div>

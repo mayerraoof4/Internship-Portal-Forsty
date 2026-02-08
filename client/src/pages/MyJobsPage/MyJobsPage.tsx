@@ -1,7 +1,7 @@
 import PortalLayout from "@/components/layouts/portal/PortalLayout";
 
-const MyJobsPage = () => {
-  return <PortalLayout title="My Jobs">"My Jobs Page</PortalLayout>;
+const MyInternshipsPage = () => {
+  return <PortalLayout title="My Internships">My Internships Page</PortalLayout>;
 };
 
-export default MyJobsPage;
+export default MyInternshipsPage;

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // This is the schema for the user_type collection
-// User types [Job Seekers, HR recruiters (or Independent Recruiters)]
+// User types [Internship Seekers, Companies]
 const UserTypeSchema = new mongoose.Schema(
   {
     user_type_name: {

@@ -12,11 +12,13 @@ const PortalLayout: FC<Props> = ({ title, children }) => {
   usePageTitle(title);
 
   return (
-    <div className="flex flex-col bg-gray-50">
+    <div className="flex flex-col bg-gray-50 h-screen">
       <Header />
 
-      <div className="mx-auto flex w-full items-start gap-x-8 px-4 py-10 sm:px-6 lg:px-8 h-full">
-        {children}
+      <div className="flex-1 overflow-y-auto">
+        <div className="mx-auto flex w-full items-start gap-x-8 px-4 py-10 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </div>
 
       <Footer />
